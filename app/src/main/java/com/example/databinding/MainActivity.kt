@@ -3,9 +3,13 @@ package com.example.databinding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.RecyclerView
 import com.example.databinding.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var recyclerView: RecyclerView
+//    private var titles = List<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +25,9 @@ class MainActivity : AppCompatActivity() {
         binding.viewModel = ViewModel()
     }
 
+    private fun setupRecyclerView() {
+//        recyclerView =
+    }
 }
 
 class ViewModel {
