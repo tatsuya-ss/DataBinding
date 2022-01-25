@@ -3,17 +3,19 @@ package com.example.databinding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.databinding.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-//    private var titles = List<String>
+    private var titles = listOf<String>("卵", "米", "刺身", "醤油")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupDataBinding()
+        setupRecyclerView()
     }
 
     private fun setupDataBinding() {
@@ -26,7 +28,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-//        recyclerView =
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.adapter = RecyclerViewAdapter(titles)
+        recyclerView.layoutManager = LinearLayoutManager(this)
     }
 }
 
