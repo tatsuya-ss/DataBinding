@@ -10,7 +10,6 @@ import com.example.databinding.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private var titles = listOf<String>("卵", "米", "刺身", "醤油")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
         recyclerView = findViewById(R.id.recyclerView)
-        recyclerView.adapter = RecyclerViewAdapter(titles)
+        recyclerView.adapter = RecyclerViewAdapter(FoodViewModel().foods)
         recyclerView.layoutManager = LinearLayoutManager(this)
     }
 }
